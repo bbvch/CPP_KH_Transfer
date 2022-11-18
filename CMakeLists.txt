@@ -1,4 +1,3 @@
-
 cmake_minimum_required(VERSION 3.12)
 project("CPP_KH_TRANSFER"
         VERSION 1.0.0
@@ -46,6 +45,23 @@ else()
     )
 endif()
 
+add_executable(attributes src/attributes.cpp)
+
+add_executable(default_member_initializtion src/default_member_initializtion.cpp)
+
+add_executable(init_statements src/init_statements.cpp)
+
+add_executable(keyword_constexpr src/keyword_constexpr.cpp)
+
+add_executable(keyword_default_delete src/keyword_default_delete.cpp)
+
+add_executable(std_algorithms src/std_algorithms.cpp)
+
+add_executable(std_move src/std_move.cpp)
+
+add_executable(std_string_view src/std_string_view.cpp)
+
+add_executable(std_tuple_std_get src/std_tuple_std_get.cpp)
 
 if(DEFINED ENABLE_CPP20_FEATURES)
   message(INFO "Building C++20 features (Not supported by all compilers)")

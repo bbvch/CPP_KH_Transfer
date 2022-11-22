@@ -10,6 +10,8 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
   if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "7.0.1")
     message(
       WARNING "Insufficient g++ version - use 7.0.1 to compile all examples")
+  elseif(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "10.0.0")
+    set(ENABLE_CPP20_FEATURES TRUE)
   endif()
 
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "^[cC]lang.*")
@@ -65,5 +67,17 @@ add_executable(std_tuple_std_get src/std_tuple_std_get.cpp)
 
 if(DEFINED ENABLE_CPP20_FEATURES)
   message(INFO "Building C++20 features (Not supported by all compilers)")
+
+  add_executable(cpp20_keyword_constinit_consteval src/cpp20_keyword_constinit_consteval.cpp)
+  target_compile_options(cpp20_keyword_constinit_consteval
+                         PRIVATE --std=c++2a)
+
+  add_executable(cpp20_ranges src/cpp20_ranges.cpp)
+  target_compile_options(cpp20_ranges
+                         PRIVATE --std=c++2a)
+
+  add_executable(cpp20_threeway_comparison src/cpp20_threeway_comparison.cpp)
+  target_compile_options(cpp20_threeway_comparison
+                         PRIVATE --std=c++2a)
 
 endif()

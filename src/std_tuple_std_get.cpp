@@ -1,5 +1,12 @@
 // SPDX-License-Identifier: GPL-3.0
 
+/**
+ * @brief Class template std::tuple is a fixed-size collection of heterogeneous values. It is a generalization of std::pair.
+ *
+ * It can be accessed via std::get and since C++17 via structured bindings. This helps to avoid boilerplate-code and
+ * C-Style In/Out Parameter.
+ */
+
 #include <iostream>
 #include <tuple>
 

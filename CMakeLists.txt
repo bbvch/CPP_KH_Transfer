@@ -65,6 +65,8 @@ add_executable(std_string_view src/std_string_view.cpp)
 
 add_executable(std_tuple_std_get src/std_tuple_std_get.cpp)
 
+add_executable(std_chrono src/std_chrono.cpp)
+
 if(DEFINED ENABLE_CPP20_FEATURES)
   message(INFO "Building C++20 features (Not supported by all compilers)")
 

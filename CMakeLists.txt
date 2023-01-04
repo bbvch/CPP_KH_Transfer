@@ -58,7 +58,12 @@ add_executable(keyword_constexpr src/keyword_constexpr.cpp)
 add_executable(keyword_default_delete src/keyword_default_delete.cpp)
 
 add_executable(lambda_expressions src/lambda_expressions.cpp)
+
+add_executable(preprocessor_has_include src/preprocessor_has_include.cpp)
+
 add_executable(std_algorithms src/std_algorithms.cpp)
+
+add_executable(std_filesystem src/std_filesystem.cpp)
 
 add_executable(std_move src/std_move.cpp)
 
@@ -86,5 +91,9 @@ if(DEFINED ENABLE_CPP20_FEATURES)
   add_executable(cpp20_threeway_comparison src/cpp20_threeway_comparison.cpp)
   target_compile_options(cpp20_threeway_comparison
                          PRIVATE --std=c++2a)
+
+  add_executable(cpp20_std_format src/cpp20_std_format.cpp)
+  target_compile_options(cpp20_std_format
+                        PRIVATE --std=c++2a)
 
 endif()

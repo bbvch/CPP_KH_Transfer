@@ -1,0 +1,18 @@
+#include <format>
+#include <iostream>
+#include <chrono>
+
+int main() {
+    // Produces "Hello world!"
+    std::cout << std::format("{} {}!\n", "Hello", "world", "something");
+
+
+    auto y = std::chrono::year { 2023 };
+    auto m = std::chrono::January;
+    // {:*^10} string möglichst mittig, links und rechts mit * auffüllen bis 10 Zeichen gesamt erreicht
+    // {:*>10} string möglichst rechts, links mit * auffüllen bis 10 Zeichen gesamt erreicht
+    std::string msg = std::format("{:*^10}\n{:*>10}\nin {}/{}!\n", "hello", "world", y, m);
+    std::cout << msg;
+
+
+}

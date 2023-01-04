@@ -57,6 +57,7 @@ add_executable(keyword_constexpr src/keyword_constexpr.cpp)
 
 add_executable(keyword_default_delete src/keyword_default_delete.cpp)
 
+add_executable(lambda_expressions src/lambda_expressions.cpp)
 add_executable(std_algorithms src/std_algorithms.cpp)
 
 add_executable(std_move src/std_move.cpp)
@@ -66,6 +67,10 @@ add_executable(std_string_view src/std_string_view.cpp)
 add_executable(std_tuple_std_get src/std_tuple_std_get.cpp)
 
 add_executable(std_chrono src/std_chrono.cpp)
+
+add_executable(std_variant src/std_variant.cpp)
+
+add_executable(structured_bindings src/structured_bindings.cpp)
 
 if(DEFINED ENABLE_CPP20_FEATURES)
   message(INFO "Building C++20 features (Not supported by all compilers)")

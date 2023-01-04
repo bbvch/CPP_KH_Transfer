@@ -20,7 +20,10 @@ int main()
 
   config["window_width"] = 500;
   config["window_full_screen"] = false;
-  config["database_user"] = "db_user_1";
+  config["database_user"] = "db_user_1"s;
+  // Beware: The s literal suffix for "db_user_1" is essential. Without it config["database_user"] would contain a bool with value true.
+  // This is because C++ allows to say `bool b = "abc";`. And overload resolution prefers to assign a C-Style string to a bool over an
+  // std::string (or any other user defined type that takes const char*).
 
   const auto window_width = config["window_width"];
 

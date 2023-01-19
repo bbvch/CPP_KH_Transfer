@@ -96,4 +96,8 @@ if(DEFINED ENABLE_CPP20_FEATURES)
   target_compile_options(cpp20_std_format
                         PRIVATE --std=c++2a)
 
+  add_executable(cpp20_concepts src/cpp20_concepts.cpp)
+  target_compile_options(cpp20_concepts
+                         PRIVATE --std=c++2a)                    
+
 endif()
